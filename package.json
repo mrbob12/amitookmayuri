@@ -1,0 +1,12 @@
+{
+  "name": "amit-mayuri-wedding-invitation",
+  "version": "1.0.0",
+  "description": "Royal Wedding Invitation Website for Amit & Mayuri",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["wedding", "invitation", "royal-wedding", "amit-mayuri", "rsvp"],
+  "author": "",
+  "license": "MIT"
+}

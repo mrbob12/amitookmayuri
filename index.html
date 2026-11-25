@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Amit & Mayuri | Royal Wedding Invitation</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Amit & Mayuri | Royal Wedding Invitation">
+  <meta name="description" content="Together with our families, we joyfully invite you to celebrate the wedding of Amit and Mayuri on 10th & 13th January 2027.">
+
+  <!-- Open Graph / Facebook / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Amit & Mayuri | Royal Wedding Celebration">
+  <meta property="og:description" content="Two Souls. One Promise. A lifetime together. Join us in celebrating our wedding ceremony in Mahad and reception in Nagpur!">
+  <meta property="og:image" content="assets/wedding_card_mahad.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Flower Petals Animation Canvas / Elements -->
+  <div class="petals-container" aria-hidden="true">
+    <span class="petal p1">🌸</span>
+    <span class="petal p2">🌺</span>
+    <span class="petal p3">✨</span>
+    <span class="petal p4">🌸</span>
+    <span class="petal p5">💮</span>
+    <span class="petal p6">🌺</span>
+    <span class="petal p7">✨</span>
+    <span class="petal p8">🌸</span>
+  </div>
+
+  <!-- Music Floating Controller -->
+  <div class="music-floating-btn" id="musicController" title="Click to play / pause music">
+    <div class="music-disc" id="musicDisc">
+      <span class="music-icon">🎵</span>
+    </div>
+    <div class="music-tooltip">
+      <span id="musicStatusText">Play Wedding Shehnai</span>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="#hero" class="nav-logo">A &bull; M</a>
+      <ul class="nav-links">
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#countdown">Countdown</a></li>
+        <li><a href="#events">Celebrations</a></li>
+        <li><a href="#cards">Invitations</a></li>
+        <li><a href="#venues">Venues</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+      <div class="nav-action">
+        <button class="nav-music-btn" id="navMusicBtn" aria-label="Toggle Wedding Music">
+          <span class="nav-music-icon">▶</span>
+          <span class="nav-music-label">Music</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-arch-container reveal">
+      
+      <!-- Spiritual Bodhi / Buddha Symbol & Lotus -->
+      <div class="sacred-emblem-wrap">
+        <svg class="sacred-tree-icon" viewBox="0 0 100 100" fill="currentColor">
+          <!-- Tree of Life silhouette motif from invitation card -->
+          <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 3" opacity="0.6"/>
+          <path d="M50 18 C52 24, 58 28, 62 26 C66 24, 69 30, 65 35 C70 36, 73 42, 68 47 C72 50, 70 56, 65 57 C67 62, 62 66, 56 64 C54 68, 46 68, 44 64 C38 66, 33 62, 35 57 C30 56, 28 50, 32 47 C27 42, 30 36, 35 35 C31 30, 34 24, 38 26 C42 28, 48 24, 50 18 Z" opacity="0.85"/>
+          <!-- Meditating posture silhouette at base -->
+          <circle cx="50" cy="54" r="3.2"/>
+          <path d="M43 65 C43 60, 47 58, 50 58 C53 58, 57 60, 57 65 Z"/>
+          <path d="M40 68 C44 65, 56 65, 60 68 C58 71, 42 71, 40 68 Z"/>
+          <!-- Trunk and roots -->
+          <path d="M49 67 L48 78 L43 83 M51 67 L52 78 L57 83 M50 78 L50 85" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+
+      <div class="hero-invitation-sub">
+        TOGETHER WITH OUR FAMILIES<br>
+        WE JOYFULLY INVITE YOU TO CELEBRATE THE WEDDING OF
+      </div>
+
+      <!-- Couple Names -->
+      <div class="hero-names-wrap">
+        <h1 class="groom-name">AMIT</h1>
+        <div class="couple-connector">
+          <span class="line-gold"></span>
+          <span class="and-script">and</span>
+          <span class="line-gold"></span>
+        </div>
+        <h1 class="bride-name">MAYURI</h1>
+      </div>
+
+      <!-- Heart Accent -->
+      <div class="hero-heart-badge">
+        <span class="gold-sparkle">✦</span>
+        <span class="heart-symbol">❤</span>
+        <span class="gold-sparkle">✦</span>
+      </div>
+
+      <div class="hero-save-date-tag">SAVE THE DATES</div>
+
+      <!-- Hero Dates Pill Grid -->
+      <div class="hero-dates-grid">
+        <div class="hero-date-box">
+          <span class="h-date-type">WEDDING CEREMONY</span>
+          <div class="h-date-num">10</div>
+          <span class="h-date-month">JANUARY 2027</span>
+          <span class="h-date-day">SUNDAY • 6:00 PM</span>
+          <span class="h-date-loc">📍 Mahad, Raigad</span>
+        </div>
+        <div class="hero-date-divider">
+          <span>&</span>
+        </div>
+        <div class="hero-date-box">
+          <span class="h-date-type">GRAND RECEPTION</span>
+          <div class="h-date-num">13</div>
+          <span class="h-date-month">JANUARY 2027</span>
+          <span class="h-date-day">WEDNESDAY • 6:00 PM</span>
+          <span class="h-date-loc">📍 Nagpur, Maharashtra</span>
+        </div>
+      </div>
+
+      <div class="hero-quote">
+        &ldquo;Two Souls. One Promise. A Lifetime Together.&rdquo;
+      </div>
+
+      <div class="hero-cta-btns">
+        <a href="#events" class="btn btn-gold">View Celebrations</a>
+        <a href="#rsvp" class="btn btn-outline">Send RSVP ❤️</a>
+      </div>
+
+      <div class="scroll-down-indicator">
+        <span>Scroll to Explore</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story & Blessings Section -->
+  <section class="section story-section" id="story">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="script-subtitle">Two Souls, One Destiny</div>
+        <h2 class="section-title">OUR LOVE STORY</h2>
+        <div class="ornament-divider">
+          <span>❦</span>
+          <span class="ornament-star">✦</span>
+          <span>❦</span>
+        </div>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-card reveal">
+          <div class="story-card-inner">
+            <div class="story-badge">The Divine Union</div>
+            <h3>When Destiny Found Us</h3>
+            <p>
+              Two lives converging in perfect harmony, guided by love, family blessings, and timeless traditions. 
+              As Amit and Mayuri prepare to take their sacred vows, they invite you to witness the beginning of their newest adventure.
+            </p>
+            <div class="story-quote-block">
+              &ldquo;With every beat of our hearts, we promise to walk every path together &mdash; in joy, laughter, and lifelong devotion.&rdquo;
+            </div>
+            <div class="story-couple-sign">Amit & Mayuri</div>
+          </div>
+        </div>
+
+        <div class="family-blessing-card reveal">
+          <div class="family-card-inner">
+            <div class="sacred-lotus-icon">🪷</div>
+            <h3>Auspicious Family Blessing</h3>
+            <p class="blessing-marathi">
+              ॥ स्वस्ति श्री गणनायकं गजमुखं मोरेश्वरं सिद्धिकम् ॥<br>
+              ॥ कुलोद्धारकं सुखकरं मंगलमूर्तिं सदा वन्दे ॥
+            </p>
+            <p class="blessing-english">
+              With the warmest love and boundless blessings of our parents, elders, and the entire family, 
+              we request the honour of your graceful presence to shower your blessings on the newly engaged couple.
+            </p>
+            <div class="family-tag">With Best Compliments From<br><strong>The Families & Relatives</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Countdown Section -->
+  <section class="section countdown-section" id="countdown">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="script-subtitle">Waiting for the Big Day</div>
+        <h2 class="section-title">COUNTING DOWN THE SECONDS</h2>
+        <div class="ornament-divider">
+          <span>❦</span>
+          <span class="ornament-star">✦</span>
+          <span>❦</span>
+        </div>
+      </div>
+
+      <!-- Tab Switcher for Wedding vs Reception Countdown -->
+      <div class="countdown-switcher-wrap reveal">
+        <button class="cd-tab-btn active" id="tabWedding" onclick="switchCountdown('wedding')">
+          💍 Wedding Ceremony (Mahad)
+        </button>
+        <button class="cd-tab-btn" id="tabReception" onclick="switchCountdown('reception')">
+          🥂 Grand Reception (Nagpur)
+        </button>
+      </div>
+
+      <div class="countdown-target-label" id="countdownTargetLabel">
+        Counting down to Sunday, 10 January 2027 • 6:00 PM (Mahad)
+      </div>
+
+      <div class="countdown-display-grid reveal">
+        <div class="countdown-card">
+          <span class="cd-number" id="days">00</span>
+          <span class="cd-label">DAYS</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-card">
+          <span class="cd-number" id="hours">00</span>
+          <span class="cd-label">HOURS</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-card">
+          <span class="cd-number" id="minutes">00</span>
+          <span class="cd-label">MINUTES</span>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-card">
+          <span class="cd-number" id="seconds">00</span>
+          <span class="cd-label">SECONDS</span>
+        </div>
+      </div>
+
+      <div class="countdown-reminder-action reveal">
+        <button class="btn btn-gold btn-sm" onclick="addToGoogleCalendar('current')">
+          📅 Add This Celebration to Google Calendar
+        </button>
+        <button class="btn btn-outline btn-sm" onclick="downloadICal('current')">
+          📥 Download Apple/Outlook (.ics)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Celebrations / Itinerary Section -->
+  <section class="section events-section" id="events">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="script-subtitle">Save The Dates</div>
+        <h2 class="section-title">WEDDING CELEBRATIONS</h2>
+        <div class="ornament-divider">
+          <span>❦</span>
+          <span class="ornament-star">✦</span>
+          <span>❦</span>
+        </div>
+        <p class="section-desc">
+          Two magnificent evenings of love, music, festivities, and culinary delight. Please join us for both joyous milestones!
+        </p>
+      </div>
+
+      <div class="events-timeline">
+
+        <!-- EVENT 1: THE WEDDING CEREMONY -->
+        <article class="event-card event-card-royal reveal">
+          <div class="event-image-container">
+            <img src="assets/wedding_card_mahad.jpg" alt="Wedding Ceremony Invitation Card" class="event-preview-img" onclick="openLightbox('assets/wedding_card_mahad.jpg')">
+            <div class="event-image-badge">VIVAH SAMARAMBH</div>
+            <div class="zoom-hint">🔍 Click to zoom invite</div>
+          </div>
+
+          <div class="event-details-container">
+            <div class="event-day-badge">SUNDAY</div>
+            <h3 class="event-heading">The Sacred Wedding Ceremony</h3>
+            <div class="event-meta-time">
+              <span class="meta-icon">🗓️</span> <strong>10 January 2027</strong>
+              <span class="meta-divider">•</span>
+              <span class="meta-icon">⏰</span> <strong>06:00 PM Onwards</strong>
+            </div>
+
+            <div class="event-venue-block">
+              <div class="venue-icon-pin">📍</div>
+              <div class="venue-info">
+                <h4>B.S. Butala Bhavan</h4>
+                <p>Sundarwadi, Mahad, District Raigad, Maharashtra</p>
+                <div class="venue-travel-note">
+                  🚆 <strong>Transit Advice:</strong> Mumbai-Goa Highway • Nearest Railway Station is <strong>Mangaon</strong> (approx. 32 km away).
+                </div>
+              </div>
+            </div>
+
+            <p class="event-summary">
+              Join us under the royal canopy as Amit and Mayuri exchange the sacred saptapadi vows amidst the sweet fragrance of blossoms and chanting of holy mantras.
+            </p>
+
+            <div class="event-actions">
+              <a href="https://www.google.com/maps/search/?api=1&query=B.S.+Butala+Bhavan+Sundarwadi,+Mahad,+Raigad" target="_blank" rel="noopener" class="btn btn-primary-action">
+                📍 Open in Google Maps
+              </a>
+              <button class="btn btn-secondary-action" onclick="addToGoogleCalendar('wedding')">
+                📅 Add to Calendar
+              </button>
+              <button class="btn btn-secondary-action" onclick="openLightbox('assets/wedding_card_mahad.jpg')">
+                🖼️ View Original Card
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT 2: THE WEDDING RECEPTION -->
+        <article class="event-card event-card-royal reveal">
+          <div class="event-image-container">
+            <img src="assets/reception_card_nagpur.jpg" alt="Wedding Reception Invitation Card" class="event-preview-img" onclick="openLightbox('assets/reception_card_nagpur.jpg')">
+            <div class="event-image-badge">SNEHA SAMMELAN</div>
+            <div class="zoom-hint">🔍 Click to zoom invite</div>
+          </div>
+
+          <div class="event-details-container">
+            <div class="event-day-badge">WEDNESDAY</div>
+            <h3 class="event-heading">The Grand Wedding Reception</h3>
+            <div class="event-meta-time">
+              <span class="meta-icon">🗓️</span> <strong>13 January 2027</strong>
+              <span class="meta-divider">•</span>
+              <span class="meta-icon">⏰</span> <strong>06:00 PM Onwards</strong>
+            </div>
+
+            <div class="event-venue-block">
+              <div class="venue-icon-pin">📍</div>
+              <div class="venue-info">
+                <h4>Queen's Land Celebration Lawn & Banquet</h4>
+                <p>Hudkeshwar Outer Ring Road, Nagpur, Maharashtra</p>
+                <div class="venue-travel-note">
+                  🚗 <strong>Transit Advice:</strong> Prime venue located right on the Hudkeshwar Outer Ring Road with spacious valet parking & lawn seating.
+                </div>
+              </div>
+            </div>
+
+            <p class="event-summary">
+              Following the ceremony, let us gather for a sparkling evening of music, exquisite dining, photo sessions, and joyful memories with the newlyweds.
+            </p>
+
+            <div class="event-actions">
+              <a href="https://www.google.com/maps/search/?api=1&query=Queens+Land+Celebration+Lawn+%26+Banquet+Hudkeshwar+Outer+Ring+Road+Nagpur" target="_blank" rel="noopener" class="btn btn-primary-action">
+                📍 Open in Google Maps
+              </a>
+              <button class="btn btn-secondary-action" onclick="addToGoogleCalendar('reception')">
+                📅 Add to Calendar
+              </button>
+              <button class="btn btn-secondary-action" onclick="openLightbox('assets/reception_card_nagpur.jpg')">
+                🖼️ View Original Card
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Invitation Cards Showcase -->
+  <section class="section cards-showcase-section" id="cards">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="script-subtitle">Exclusive Keepsake</div>
+        <h2 class="section-title">OFFICIAL INVITATION CARDS</h2>
+        <div class="ornament-divider">
+          <span>❦</span>
+          <span class="ornament-star">✦</span>
+          <span>❦</span>
+        </div>
+        <p class="section-desc">
+          Click any card below to view in full resolution or save the official digital invitation to your device.
+        </p>
+      </div>
+
+      <div class="cards-duo-grid">
+        
+        <!-- Card 1: Mahad Wedding -->
+        <div class="invitation-card-item reveal">
+          <div class="card-frame" onclick="openLightbox('assets/wedding_card_mahad.jpg')">
+            <img src="assets/wedding_card_mahad.jpg" alt="Amit and Mayuri Wedding Card - Mahad">
+            <div class="card-overlay-hover">
+              <span class="zoom-icon">🔎 View Full Size</span>
+            </div>
+          </div>
+          <div class="card-caption">
+            <h3>Wedding Ceremony Invitation</h3>
+            <p>Sunday, 10 Jan 2027 • B.S. Butala Bhavan, Mahad</p>
+            <div class="card-download-row">
+              <a href="assets/wedding_card_mahad.jpg" download="Amit-Mayuri-Wedding-Mahad.jpg" class="btn btn-sm btn-outline">
+                📥 Download Card
+              </a>
+              <button class="btn btn-sm btn-gold" onclick="shareCard('wedding')">
+                📲 Share on WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Nagpur Reception -->
+        <div class="invitation-card-item reveal">
+          <div class="card-frame" onclick="openLightbox('assets/reception_card_nagpur.jpg')">
+            <img src="assets/reception_card_nagpur.jpg" alt="Amit and Mayuri Reception Card - Nagpur">
+            <div class="card-overlay-hover">
+              <span class="zoom-icon">🔎 View Full Size</span>
+            </div>
+          </div>
+          <div class="card-caption">
+            <h3>Wedding Reception Invitation</h3>
+            <p>Wednesday, 13 Jan 2027 • Queen's Land Lawn, Nagpur</p>
+            <div class="card-download-row">
+              <a href="assets/reception_card_nagpur.jpg" download="Amit-Mayuri-Reception-Nagpur.jpg" class="btn btn-sm btn-outline">
+                📥 Download Card
+              </a>
+              <button class="btn btn-sm btn-gold" onclick="shareCard('reception')">
+                📲 Share on WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Venues & Directions Section -->
+  <section class="section venues-section" id="venues">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="script-subtitle">How To Reach</div>
+        <h2 class="section-title">CELEBRATION VENUES & MAPS</h2>
+        <div class="ornament-divider">
+          <span>❦</span>
+          <span class="ornament-star">✦</span>
+          <span>❦</span>
+        </div>
+      </div>
+
+      <div class="venue-cards-grid">
+        
+        <!-- Venue 1 -->
+        <div class="venue-location-card reveal">
+          <div class="venue-card-header">
+            <div class="v-tag">VENUE FOR WEDDING</div>
+            <h3>B.S. Butala Bhavan</h3>
+            <span class="v-city">Mahad, Raigad, Maharashtra</span>
+          </div>
+
+          <div class="venue-card-body">
+            <div class="venue-detail-item">
+              <span class="item-icon">📍</span>
+              <div>
+                <strong>Full Address:</strong>
+                <p>Sundarwadi, Mahad, Raigad District, Maharashtra</p>
+              </div>
+            </div>
+
+            <div class="venue-detail-item">
+              <span class="item-icon">🛣️</span>
+              <div>
+                <strong>Highway Route:</strong>
+                <p>Mumbai - Goa Highway (NH 66)</p>
+              </div>
+            </div>
+
+            <div class="venue-detail-item">
+              <span class="item-icon">🚉</span>
+              <div>
+                <strong>Nearest Railway Station:</strong>
+                <p>Mangaon Railway Station (approx. 32 km away)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="venue-card-footer">
+            <a href="https://www.google.com/maps/search/?api=1&query=B.S.+Butala+Bhavan+Sundarwadi,+Mahad,+Raigad" target="_blank" rel="noopener" class="btn btn-gold btn-block">
+              🗺️ Open Mahad Venue in Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Venue 2 -->
+        <div class="venue-location-card reveal">
+          <div class="venue-card-header">
+            <div class="v-tag">VENUE FOR RECEPTION</div>
+            <h3>Queen's Land Celebration Lawn & Banquet</h3>
+            <span class="v-city">Nagpur, Maharashtra</span>
+          </div>
+
+          <div class="venue-card-body">
+            <div class="venue-detail-item">
+              <span class="item-icon">📍</span>
+              <div>
+                <strong>Full Address:</strong>
+                <p>Hudkeshwar Outer Ring Road, Nagpur, Maharashtra</p>
+              </div>
+            </div>
+
+            <div class="venue-detail-item">
+              <span class="item-icon">🚗</span>
+              <div>
+                <strong>Road Access:</strong>
+                <p>Directly on the Nagpur Outer Ring Road bypass</p>
+              </div>
+            </div>
+
+            <div class="venue-detail-item">
+              <span class="item-icon">🅿️</span>
+              <div>
+                <strong>Facilities:</strong>
+                <p>Spacious banquet hall, open lawn & ample parking space</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="venue-card-footer">
+            <a href="https://www.google.com/maps/search/?api=1&query=Queens+Land+Celebration+Lawn+%26+Banquet+Hudkeshwar+Outer+Ring+Road+Nagpur" target="_blank" rel="noopener" class="btn btn-gold btn-block">
+              🗺️ Open Nagpur Venue in Google Maps
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive RSVP & Blessings Section -->
+  <section class="section rsvp-section" id="rsvp">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="script-subtitle">Celebrate with Us</div>
+        <h2 class="section-title">RSVP & BLESSINGS</h2>
+        <div class="ornament-divider">
+          <span>❦</span>
+          <span class="ornament-star">✦</span>
+          <span>❦</span>
+        </div>
+        <p class="section-desc">
+          Your presence will multiply our happiness. Please let us know if you can attend so we can arrange the warmest hospitality!
+        </p>
+      </div>
+
+      <div class="rsvp-wrapper reveal">
+        <form class="rsvp-form" id="weddingRsvpForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guestName">Your Full Name <span class="req">*</span></label>
+              <input type="text" id="guestName" placeholder="e.g. Rahul Sharma & Family" required>
+            </div>
+            <div class="form-group">
+              <label for="guestPhone">WhatsApp / Mobile Number</label>
+              <input type="tel" id="guestPhone" placeholder="e.g. +91 98765 43210">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="eventAttending">Which Events Will You Attend? <span class="req">*</span></label>
+              <select id="eventAttending" required>
+                <option value="">-- Please Select --</option>
+                <option value="Both Wedding & Reception">Both Wedding (Mahad) & Reception (Nagpur) ❤️</option>
+                <option value="Wedding Ceremony in Mahad (10 Jan)">Wedding Ceremony in Mahad (10 Jan 2027)</option>
+                <option value="Wedding Reception in Nagpur (13 Jan)">Wedding Reception in Nagpur (13 Jan 2027)</option>
+                <option value="Sending Warm Blessings from Afar">Unable to attend in person, sending warm blessings</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="guestCount">Total Number of Guests <span class="req">*</span></label>
+              <input type="number" id="guestCount" min="1" max="20" value="1" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="blessingMessage">Your Warm Message or Blessings for Amit & Mayuri</label>
+            <textarea id="blessingMessage" rows="3" placeholder="Wishing you a lifetime of endless joy, laughter and togetherness..."></textarea>
+          </div>
+
+          <div class="rsvp-button-group">
+            <button type="submit" class="btn btn-gold btn-block" id="submitRsvpBtn">
+              💌 Submit My RSVP
+            </button>
+            <button type="button" class="btn btn-whatsapp btn-block" onclick="sendRsvpViaWhatsApp()">
+              💬 Send RSVP via WhatsApp
+            </button>
+          </div>
+
+          <div class="form-status-msg" id="formStatusMsg"></div>
+        </form>
+      </div>
+
+      <!-- Guest Wishes Wall -->
+      <div class="wishes-wall-container reveal">
+        <h3 class="wishes-wall-title">Blessings From Dear Guests</h3>
+        <div class="wishes-grid" id="wishesGrid">
+          <div class="wish-card">
+            <p class="wish-text">&ldquo;May your love bloom brighter with each passing year! Heartiest congratulations to Amit and Mayuri!&rdquo;</p>
+            <span class="wish-author">— Rajesh & Sunita K.</span>
+          </div>
+          <div class="wish-card">
+            <p class="wish-text">&ldquo;Two incredible souls uniting forever. Looking forward to celebrating both in Mahad and Nagpur!&rdquo;</p>
+            <span class="wish-author">— Rohan Deshmukh</span>
+          </div>
+          <div class="wish-card">
+            <p class="wish-text">&ldquo;Wishing you both a lifetime of happiness, understanding, and sweet memories. Congratulations!&rdquo;</p>
+            <span class="wish-author">— The Kulkarni Family</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container reveal">
+      <div class="footer-names">Amit &amp; Mayuri</div>
+      <p class="footer-tagline">TWO SOULS &bull; ONE PROMISE &bull; A LIFETIME TOGETHER</p>
+      <div class="footer-dates-text">
+        <span>10th January 2027 (Mahad)</span> &bull; <span>13th January 2027 (Nagpur)</span>
+      </div>
+      <div class="footer-copy">
+        Crafted with love for Amit &amp; Mayuri's Wedding Celebrations ❤️
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for HD Card Inspection -->
+  <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-content">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close Preview">&times;</button>
+      <img src="" alt="Enlarged Card" id="lightboxImg">
+      <div class="lightbox-actions">
+        <a href="" id="lightboxDownload" download="Wedding-Invite.jpg" class="btn btn-gold btn-sm">
+          📥 Download High-Res Card
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Element (Traditional Mangalashtak / Wedding Instrumental) -->
+  <audio id="weddingAudio" loop preload="auto">
+    <source src="assets/wedding-music.mp3" type="audio/mpeg">
+    Your browser does not support audio playback.
+  </audio>
+
+  <!-- Mobile Bottom Quick Navigation -->
+  <div class="mobile-bottom-nav">
+    <a href="#hero" class="m-nav-item">
+      <span class="m-icon">🏠</span>
+      <span class="m-label">Home</span>
+    </a>
+    <a href="#events" class="m-nav-item">
+      <span class="m-icon">🗓️</span>
+      <span class="m-label">Events</span>
+    </a>
+    <a href="#cards" class="m-nav-item">
+      <span class="m-icon">💌</span>
+      <span class="m-label">Cards</span>
+    </a>
+    <a href="#venues" class="m-nav-item">
+      <span class="m-icon">📍</span>
+      <span class="m-label">Venues</span>
+    </a>
+    <a href="#rsvp" class="m-nav-item">
+      <span class="m-icon">✍️</span>
+      <span class="m-label">RSVP</span>
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

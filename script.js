@@ -281,7 +281,7 @@ function sendRsvpViaWhatsApp() {
              `👥 Total Guests: ${data.count || '1'}\n`;
 
   if (data.message) {
-    text += `💬 Blessings / Message: "${data.message}"\n`;
+    text += `💬 Wishes / Message: "${data.message}"\n`;
   }
 
   text += `\n❤️ Looking forward to celebrating together!`;

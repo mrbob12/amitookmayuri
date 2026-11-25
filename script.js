@@ -1,16 +1,17 @@
 /**
  * AMIT & MAYURI ROYAL WEDDING INVITATION SCRIPT
- * Interactive features: Audio Player, Dual Countdown, Calendar, Lightbox, WhatsApp RSVP, Wishes Wall
+ * Features: Background Music (Alfaaz - Hamza Malik), Equalizer animation,
+ * Dual Countdown, Calendar Sync (.ics & Google), HD Photo Lightbox, WhatsApp RSVP
  */
 
-// Event Dates (Indian Standard Time)
+// Event Configuration
 const EVENT_DATES = {
   wedding: {
     title: "Wedding Ceremony of Amit & Mayuri",
     target: new Date("January 10, 2027 18:00:00").getTime(),
     label: "Counting down to Sunday, 10 January 2027 • 6:00 PM (Mahad)",
     location: "B.S. Butala Bhavan Sundarwadi, Mahad, Raigad, Maharashtra",
-    description: "Sacred Wedding Ceremony of Amit & Mayuri under family blessings. Nearest station: Mangaon (32km) on Mumbai-Goa Highway.",
+    description: "Sacred Wedding Ceremony of Amit & Mayuri. Nearest station: Mangaon (32km) on Mumbai-Goa Highway.",
     startDate: "20270110T123000Z", // 18:00 IST is 12:30 UTC
     endDate: "20270110T173000Z"
   },
@@ -83,33 +84,34 @@ setInterval(updateCountdown, 1000);
 updateCountdown();
 
 /* ==========================================================================
-   2. AUDIO CONTROLLER & AUTOPLAY LOGIC
+   2. AUDIO CONTROLLER (ALFAAZ - HAMZA MALIK)
    ========================================================================== */
 const audio = document.getElementById("weddingAudio");
 const musicController = document.getElementById("musicController");
 const musicDisc = document.getElementById("musicDisc");
 const musicStatusText = document.getElementById("musicStatusText");
 const navMusicBtn = document.getElementById("navMusicBtn");
+const navMusicText = document.getElementById("navMusicText");
 
 let userToggledAudio = false;
 
 if (audio) {
-  audio.volume = 0.55;
+  audio.volume = 0.6;
 
   function syncAudioUI(isPlaying) {
     if (isPlaying) {
       if (musicDisc) musicDisc.classList.add("playing");
-      if (musicStatusText) musicStatusText.textContent = "Pause Shehnai ⏸";
+      if (musicStatusText) musicStatusText.textContent = "Playing • Tap to Pause ⏸";
       if (navMusicBtn) {
-        navMusicBtn.querySelector(".nav-music-icon").textContent = "⏸";
-        navMusicBtn.querySelector(".nav-music-label").textContent = "Pause";
+        navMusicBtn.classList.add("playing");
+        if (navMusicText) navMusicText.textContent = "Pause Song";
       }
     } else {
       if (musicDisc) musicDisc.classList.remove("playing");
-      if (musicStatusText) musicStatusText.textContent = "Play Shehnai ▶";
+      if (musicStatusText) musicStatusText.textContent = "Paused • Tap to Play ▶";
       if (navMusicBtn) {
-        navMusicBtn.querySelector(".nav-music-icon").textContent = "▶";
-        navMusicBtn.querySelector(".nav-music-label").textContent = "Music";
+        navMusicBtn.classList.remove("playing");
+        if (navMusicText) navMusicText.textContent = "Play Song";
       }
     }
   }
@@ -120,7 +122,7 @@ if (audio) {
         userToggledAudio = true;
         syncAudioUI(true);
       }).catch(err => {
-        console.log("Audio playback waiting for gesture:", err);
+        console.log("Audio waiting for user gesture:", err);
       });
     } else {
       audio.pause();
@@ -136,7 +138,7 @@ if (audio) {
     navMusicBtn.addEventListener("click", toggleMusic);
   }
 
-  // Attempt gentle autoplay on first user interaction anywhere on page
+  // Gentle autoplay on first interaction anywhere on page
   const interactionEvents = ["click", "touchstart", "scroll", "keydown"];
   function initiateAudioOnInteraction() {
     if (!userToggledAudio && audio.paused) {
@@ -144,7 +146,7 @@ if (audio) {
         syncAudioUI(true);
         cleanupInteractionListeners();
       }).catch(() => {
-        // will retry on next user click
+        // Will trigger on next explicit tap
       });
     }
   }
@@ -205,7 +207,7 @@ function downloadICal(eventKey) {
 }
 
 /* ==========================================================================
-   4. LIGHTBOX MODAL FOR HD INVITATION CARDS
+   4. LIGHTBOX MODAL (FOR HD PHOTOS & INVITATION CARDS)
    ========================================================================== */
 const lightboxModal = document.getElementById("lightboxModal");
 const lightboxImg = document.getElementById("lightboxImg");
@@ -242,7 +244,7 @@ function shareCard(cardType) {
     ? "Wedding Ceremony on 10th Jan 2027 in Mahad" 
     : "Grand Wedding Reception on 13th Jan 2027 in Nagpur";
     
-  const text = `✨ You are cordially invited to celebrate the Wedding of Amit & Mayuri! ✨\n\n📌 Event: ${cardName}\n🌐 View full interactive invitation card & details here:\n${window.location.href}`;
+  const text = `✨ You are cordially invited to celebrate the Wedding of Amit & Mayuri! ✨\n\n📌 Event: ${cardName}\n🌐 View our interactive wedding website & pre-wedding gallery here:\n${window.location.href}`;
   
   const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
   window.open(whatsappUrl, "_blank");
@@ -287,7 +289,6 @@ function sendRsvpViaWhatsApp() {
   const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
   window.open(whatsappUrl, "_blank");
 
-  // Also record locally
   recordWishOnWall(data.name, data.message);
 }
 
@@ -301,16 +302,13 @@ if (rsvpForm) {
       return;
     }
 
-    // Save to local wishes wall
     recordWishOnWall(data.name, data.message);
 
-    // Show pleasant feedback
     if (formStatusMsg) {
       formStatusMsg.className = "form-status-msg success";
       formStatusMsg.innerHTML = `❤️ Thank you, <strong>${data.name}</strong>! Your RSVP for <em>${data.attending}</em> (${data.count} guests) has been lovingly noted!`;
     }
 
-    // Reset form after 2 seconds
     setTimeout(() => {
       rsvpForm.reset();
     }, 4000);
@@ -341,7 +339,7 @@ const revealElements = document.querySelectorAll(".reveal");
 const observerOptions = {
   root: null,
   rootMargin: "0px",
-  threshold: 0.1
+  threshold: 0.08
 };
 
 const revealObserver = new IntersectionObserver((entries, observer) => {
